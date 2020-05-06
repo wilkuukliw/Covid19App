@@ -12,9 +12,19 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
+    // Prompts to call when on physical device
+    @IBAction func callBtnPressed(_ sender: UIButton) {
+        guard let numberString = sender.titleLabel?.text,
+              let url = URL(string:"telprompt://\(numberString)") else {
+            return
+        }
+        UIApplication.shared.open(url)
+    }
+    
 
+    
 }
 
