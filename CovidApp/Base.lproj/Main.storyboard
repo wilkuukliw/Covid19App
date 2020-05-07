@@ -67,7 +67,7 @@
                                 <rect key="frame" x="0.0" y="38" width="414" height="775"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-rM-x03">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1525"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj4-9Z-MjD">
                                                 <rect key="frame" x="264" y="229" width="144.5" height="54"/>
@@ -181,17 +181,39 @@ Shortness of breath or difficulty breathing</string>
                                                     <constraint firstAttribute="height" constant="150" id="3Xx-9M-OTr"/>
                                                 </constraints>
                                             </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jjr-w4-2Lm">
+                                                <rect key="frame" x="51" y="1151" width="312" height="302"/>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98031258730000004" blue="0.79934112739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="302" id="Ubq-3j-J8F"/>
+                                                </constraints>
+                                                <string key="text">Stay at home
+
+Only go outside for food, health reasons or work (but only if you cannot work from home)
+
+If you go out, stay 2 metres (6ft) away from other people at all times
+
+Wash your hands as soon as you get home
+
+Do not meet others, even friends or family. You can spread the virus even if you don’t have symptoms.</string>
+                                                <color key="textColor" red="1" green="0.52245292210000005" blue="0.60314566700000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98031258733735882" blue="0.79934112741025465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="jjr-w4-2Lm" firstAttribute="leading" secondItem="3dP-rM-x03" secondAttribute="leading" constant="51" id="1rp-S3-KIq"/>
                                             <constraint firstItem="IdN-q0-FV8" firstAttribute="top" secondItem="6h0-qN-p1C" secondAttribute="bottom" constant="45.5" id="341-Io-nTr"/>
                                             <constraint firstItem="y9m-YP-BgF" firstAttribute="firstBaseline" secondItem="OGS-xv-C7M" secondAttribute="baseline" id="3be-M8-zvk"/>
+                                            <constraint firstItem="jjr-w4-2Lm" firstAttribute="top" secondItem="Ksg-aT-Uxo" secondAttribute="bottom" constant="65" id="4Pt-rO-AIF"/>
                                             <constraint firstItem="Wta-Dk-THx" firstAttribute="top" secondItem="Guo-wl-LaI" secondAttribute="bottom" constant="46" id="8wQ-z8-e91"/>
                                             <constraint firstItem="trI-NB-z33" firstAttribute="leading" secondItem="3dP-rM-x03" secondAttribute="leading" constant="20" id="Ajh-jO-44I"/>
                                             <constraint firstItem="jj4-9Z-MjD" firstAttribute="firstBaseline" secondItem="yar-hp-q5H" secondAttribute="firstBaseline" id="AyY-Is-Bdr"/>
                                             <constraint firstItem="OGS-xv-C7M" firstAttribute="leading" secondItem="3dP-rM-x03" secondAttribute="leading" constant="20" id="B4c-RV-dM4"/>
                                             <constraint firstItem="Guo-wl-LaI" firstAttribute="top" secondItem="OGS-xv-C7M" secondAttribute="bottom" constant="46" id="BVA-Au-4wp"/>
                                             <constraint firstItem="6h0-qN-p1C" firstAttribute="leading" secondItem="trI-NB-z33" secondAttribute="trailing" constant="44" id="FED-3S-DdH"/>
+                                            <constraint firstItem="jjr-w4-2Lm" firstAttribute="centerX" secondItem="3dP-rM-x03" secondAttribute="centerX" id="GIc-Gk-UyN"/>
                                             <constraint firstAttribute="trailing" secondItem="jj4-9Z-MjD" secondAttribute="trailing" constant="5.5" id="GUk-7H-ec3"/>
                                             <constraint firstItem="Ly4-t8-MNd" firstAttribute="top" secondItem="y9m-YP-BgF" secondAttribute="bottom" constant="12" id="Gpe-iO-3Lr"/>
                                             <constraint firstItem="OGS-xv-C7M" firstAttribute="top" secondItem="yar-hp-q5H" secondAttribute="bottom" constant="50" id="LP5-MM-hqs"/>
@@ -241,7 +263,7 @@ Shortness of breath or difficulty breathing</string>
                                     <constraint firstItem="3dP-rM-x03" firstAttribute="top" secondItem="A1R-cI-dT8" secondAttribute="top" id="AJ3-XI-gLW"/>
                                     <constraint firstItem="3dP-rM-x03" firstAttribute="centerX" secondItem="Mtu-ob-qsQ" secondAttribute="centerX" id="BI0-fW-cNf"/>
                                     <constraint firstItem="3dP-rM-x03" firstAttribute="bottom" secondItem="ZOB-ub-XUx" secondAttribute="bottom" id="Gha-rh-EGF"/>
-                                    <constraint firstItem="3dP-rM-x03" firstAttribute="height" secondItem="Mtu-ob-qsQ" secondAttribute="height" constant="600" id="Gz1-as-cHl"/>
+                                    <constraint firstItem="3dP-rM-x03" firstAttribute="height" secondItem="Mtu-ob-qsQ" secondAttribute="height" constant="750" id="Gz1-as-cHl"/>
                                     <constraint firstItem="3dP-rM-x03" firstAttribute="trailing" secondItem="A1R-cI-dT8" secondAttribute="trailing" id="SIV-rg-WAb"/>
                                     <constraint firstAttribute="bottom" secondItem="3dP-rM-x03" secondAttribute="bottom" id="UFk-E7-WKd"/>
                                     <constraint firstItem="3dP-rM-x03" firstAttribute="top" secondItem="A1R-cI-dT8" secondAttribute="top" id="WKl-FI-EFd"/>
