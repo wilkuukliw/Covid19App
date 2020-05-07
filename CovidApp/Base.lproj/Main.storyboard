@@ -181,7 +181,7 @@ Shortness of breath or difficulty breathing</string>
                                                     <constraint firstAttribute="height" constant="150" id="3Xx-9M-OTr"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jjr-w4-2Lm">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjr-w4-2Lm">
                                                 <rect key="frame" x="51" y="1151" width="312" height="302"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98031258730000004" blue="0.79934112739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
