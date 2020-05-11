@@ -26,8 +26,9 @@ class FirstViewController: UIViewController {
         df.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
         let dateString = df.string(from: date)
         
-        let urlDenmark = "https://api.covid19api.com/country/denmark/status/confirmed/live?from=2020-05-01T00:00:00Z&to=\(dateString)"
+        let urlDenmark = "https://api.covid19api.com/country/denmark/status/confirmed/live?from=2020-05-10T00:00:00Z&to=\(dateString)"
         
+        print(urlDenmark)
         let semaphore = DispatchSemaphore (value: 0)
         var request = URLRequest(url: URL(string: urlDenmark)!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
@@ -38,10 +39,20 @@ class FirstViewController: UIViewController {
             return
           }
             let liveData = String(data: data, encoding: .utf8)!
+            print(liveData)
+            print(type(of: liveData))
+            //liveData.indices(of: "Cases")
+            print(self.findCases(liveData))
+            
+            
             do {
                 let liveDataArray = try JSONSerialization.jsonObject(with: data, options: [])
-                print(liveDataArray)
-                print(type(of: liveDataArray))
+                //print(liveDataArray)
+                //print(type(of: liveDataArray))
+                //let lastIndex = (liveDataArray as AnyObject).count!
+                //print((liveDataArray as AnyObject).index(of: lastIndex))
+            
+                
             } catch {
                 print("error")
             }
@@ -52,6 +63,17 @@ class FirstViewController: UIViewController {
 
         task.resume()
         semaphore.wait()
+    }
+    
+    func findCases(_ content:String) -> [Substring] {
+        let pattern = "Cases\":"
+        var srcs:[Substring] = []
+        var startIndex = content.startIndex
+        while let range =  content[startIndex...].range(of: pattern, options: .regularExpression) {
+            srcs.append(content[range])
+            startIndex = range.upperBound
+        }
+        return srcs
     }
     
     
