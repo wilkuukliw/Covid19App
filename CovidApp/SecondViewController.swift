@@ -15,7 +15,8 @@ class SecondViewController: UIViewController {
         
     }
 
-    // Prompts to call when on physical device
+    // Prompts to call given number when running on physical device(!)
+    
     @IBAction func callBtnPressed(_ sender: UIButton) {
         guard let numberString = sender.titleLabel?.text,
               let url = URL(string:"telprompt://\(numberString)") else {
