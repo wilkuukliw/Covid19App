@@ -7,28 +7,45 @@
 //
 
 import UIKit
+import MapKit
 import Foundation
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var showCasesBtn: UIButton!
+    let locationManager = CLLocationManager()
+    var liveCaseData:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
         getLiveStatus()
-        
+
     }
 
+    @IBAction func showBtnPressed(_ sender: Any) {
+    
+        let alertController = UIAlertController(title: "Total Cases: \(self.liveCaseData)", message: "Stay home.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Okay", style: .default))
+            self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+
+    
     func getLiveStatus() {
         
-        let date = Date()
+        let today = Date()
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
-        let dateString = df.string(from: date)
+        let yesterdayString = df.string(from: yesterday)
+        let todayString = df.string(from: today)
         
-        let urlDenmark = "https://api.covid19api.com/country/denmark/status/confirmed/live?from=2020-05-10T00:00:00Z&to=\(dateString)"
+        let urlDenmark = "https://api.covid19api.com/country/denmark/status/confirmed/live?from=\(yesterdayString)&to=\(todayString)"
         
-        print(urlDenmark)
         let semaphore = DispatchSemaphore (value: 0)
         var request = URLRequest(url: URL(string: urlDenmark)!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
@@ -39,24 +56,8 @@ class FirstViewController: UIViewController {
             return
           }
             let liveData = String(data: data, encoding: .utf8)!
-            print(liveData)
-            print(type(of: liveData))
-            //liveData.indices(of: "Cases")
-            print(self.findCases(liveData))
-            
-            
-            do {
-                let liveDataArray = try JSONSerialization.jsonObject(with: data, options: [])
-                //print(liveDataArray)
-                //print(type(of: liveDataArray))
-                //let lastIndex = (liveDataArray as AnyObject).count!
-                //print((liveDataArray as AnyObject).index(of: lastIndex))
-            
-                
-            } catch {
-                print("error")
-            }
-            
+            self.liveCaseData = self.findCases(liveData)
+            print("total case: \(self.liveCaseData)")
         
           semaphore.signal()
         }
@@ -65,18 +66,29 @@ class FirstViewController: UIViewController {
         semaphore.wait()
     }
     
-    func findCases(_ content:String) -> [Substring] {
-        let pattern = "Cases\":"
-        var srcs:[Substring] = []
-        var startIndex = content.startIndex
-        while let range =  content[startIndex...].range(of: pattern, options: .regularExpression) {
-            srcs.append(content[range])
-            startIndex = range.upperBound
-        }
-        return srcs
-    }
+    func findCases(_ content:String) -> Int {
+       
+        let strArr = content.split{ $0 == "," }
+        
+        let casesInMainland = strArr[7]
+        let casesInGreenland = strArr[17]
+        let casesInFaroeIsland = strArr[27]
+        
+        let mainlandIndex = casesInMainland.index(casesInMainland.startIndex, offsetBy: 14)
+        let greenlandIndex = casesInGreenland.index(casesInGreenland.startIndex, offsetBy: 14)
+        let faroeIndex = casesInFaroeIsland.index(casesInFaroeIsland.startIndex, offsetBy: 14)
+        
+        let mainlandCase = Int(casesInMainland[mainlandIndex...])!
+        let greeenlandCase = Int(casesInGreenland[greenlandIndex...])!
+        let faroeCase = Int(casesInFaroeIsland[faroeIndex...])!
     
+        let totalCases = mainlandCase + greeenlandCase + faroeCase
+        
+        return totalCases
+    }
     
 
 }
 
+
+// mainland lat 56.26 lon 9.5
