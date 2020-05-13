@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		0182058224657E160034E211 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182058124657E160034E211 /* ThirdViewController.swift */; };
 		01820584246970C70034E211 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01820583246970C70034E211 /* GoogleService-Info.plist */; };
 		515E75582462D7A400170774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E75572462D7A400170774 /* AppDelegate.swift */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		0182058124657E160034E211 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		01820583246970C70034E211 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		515E75542462D7A400170774 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
