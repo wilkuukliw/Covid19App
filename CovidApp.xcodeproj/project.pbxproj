@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		428061D7246C803F001CDE85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428061D6246C803F001CDE85 /* Main.storyboard */; };
-=======
+
 		0182058224657E160034E211 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182058124657E160034E211 /* ThirdViewController.swift */; };
 		01820584246970C70034E211 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01820583246970C70034E211 /* GoogleService-Info.plist */; };
->>>>>>> a59d70b803f314ec87081acd9aec990458033946
 		515E75582462D7A400170774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E75572462D7A400170774 /* AppDelegate.swift */; };
 		515E755A2462D7A400170774 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E75592462D7A400170774 /* SceneDelegate.swift */; };
 		515E755C2462D7A400170774 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E755B2462D7A400170774 /* FirstViewController.swift */; };
@@ -22,12 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-		428061D6246C803F001CDE85 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Main.storyboard"; sourceTree = "<group>"; };
-=======
+
 		0182058124657E160034E211 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		01820583246970C70034E211 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
->>>>>>> a59d70b803f314ec87081acd9aec990458033946
 		515E75542462D7A400170774 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		515E75572462D7A400170774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		515E75592462D7A400170774 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
