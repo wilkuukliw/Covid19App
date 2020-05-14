@@ -2,48 +2,29 @@
 //  ThirdViewController.swift
 //  CovidApp
 //
-//  Created by Plam Stefanova on 5/8/20.
+//  Created by Anna Maria on 06/05/2020.
 //  Copyright © 2020 Anna Maria. All rights reserved.
 //
 
 import UIKit
-import Foundation
 
-class ThirdViewController: UIViewController, UITableViewDataSource {
-    
-    
-    
-   let sections = ["Symptoms"]
-    let sympt = ["Headache", "Fever", "Cold"]
+class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
-      super.viewDidLoad()
-      // Do any additional setup after loading the view, typically from a nib.
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
-
-    // MARK: UITableViewDataSource
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      return sections[section]
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-      return sections.count
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sympt.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      // Create an object of the dynamic cell "PlainCell"
-      let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
-      // Depending on the section, fill the textLabel with the relevant text
-      cell.textLabel?.text = sympt[indexPath.row]
-        
-      // Return the configured cell
-      return cell
-    }
-
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
